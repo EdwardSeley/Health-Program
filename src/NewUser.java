@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+   
 
 /**
  *
@@ -26,105 +27,132 @@ public class NewUser extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
+        titleLabel = new javax.swing.JLabel();
+        ageText = new javax.swing.JTextField();
+        ageLabel = new javax.swing.JLabel();
+        femaleRadioButton = new javax.swing.JRadioButton();
+        maleRadioButton = new javax.swing.JRadioButton();
+        genderLabel = new javax.swing.JLabel();
+        weightLabel = new javax.swing.JLabel();
+        weightText = new javax.swing.JTextField();
+        poundsRadioButton = new javax.swing.JRadioButton();
+        kilosRadioButton = new javax.swing.JRadioButton();
+        inchesText = new javax.swing.JTextField();
+        heightLabel = new javax.swing.JLabel();
+        backButton = new javax.swing.JButton();
+        finishButton = new javax.swing.JButton();
+        feetText = new javax.swing.JTextField();
+        feetLabel = new javax.swing.JLabel();
+        inchesLabel = new javax.swing.JLabel();
+        orLabel = new javax.swing.JLabel();
+        centimetersLabel = new javax.swing.JLabel();
+        centimetersText = new javax.swing.JTextField();
+        exerciseSpinner = new javax.swing.JSpinner();
+        UsernameLabel = new javax.swing.JLabel();
+        usernameText = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jSpinner1 = new javax.swing.JSpinner();
-        jLabel11 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("LM Roman 10", 1, 24)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Complete Your Profile");
+        titleLabel.setFont(new java.awt.Font("LM Roman 10", 1, 24)); // NOI18N
+        titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titleLabel.setText("Complete Your Profile");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        ageLabel.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        ageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ageLabel.setText("Age:");
+
+        femaleRadioButton.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        femaleRadioButton.setText("Female");
+        femaleRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                femaleRadioButtonActionPerformed(evt);
+            }
+        });
+        femaleRadioButton.setSelected(true);
+
+        maleRadioButton.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        maleRadioButton.setText("Male");
+        maleRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                maleRadioButtonActionPerformed(evt);
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Age:");
+        genderLabel.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        genderLabel.setText("Gender:");
 
-        jRadioButton1.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
-        jRadioButton1.setText("Female");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        weightLabel.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        weightLabel.setText("Weight:");
+
+        poundsRadioButton.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        poundsRadioButton.setText("Pounds");
+        poundsRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                poundsRadioButtonActionPerformed(evt);
+            }
+        });
+        poundsRadioButton.setSelected(true);
+
+        kilosRadioButton.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        kilosRadioButton.setText("Kilos");
+        kilosRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kilosRadioButtonActionPerformed(evt);
             }
         });
 
-        jRadioButton2.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
-        jRadioButton2.setText("Male");
-
-        jLabel3.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
-        jLabel3.setText("Gender:");
-
-        jLabel4.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
-        jLabel4.setText("Weight:");
-
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+        inchesText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                inchesTextKeyPressed(evt);
             }
         });
 
-        jRadioButton3.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
-        jRadioButton3.setText("Pounds");
+        heightLabel.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        heightLabel.setText("Height:");
 
-        jRadioButton4.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
-        jRadioButton4.setText("Kilos");
-
-        jLabel5.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
-        jLabel5.setText("Height:");
-
-        jLabel6.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
-        jLabel6.setText("Exercise Level:");
-
-        jButton1.setText("Back");
-
-        jButton2.setText("Finish");
-
-        jLabel7.setText("Feet:");
-
-        jLabel8.setText("Inches:");
-
-        jLabel9.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
-        jLabel9.setText("Or");
-
-        jLabel10.setText("Centimeters:");
-
-        jSpinner1.setModel(new javax.swing.SpinnerListModel(new String[] {"No Exercise", "Three Times a Week", "Four Times a Week ", "Five Times a Week ", "Daily ", "Daily (Intense)"}));
-
-        jLabel11.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
-        jLabel11.setText("Username:");
-
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        backButton.setText("Back");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                backButtonActionPerformed(evt);
             }
         });
+
+        finishButton.setText("Finish");
+        finishButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                finishButtonActionPerformed(evt);
+            }
+        });
+
+        feetText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                feetTextKeyPressed(evt);
+            }
+        });
+
+        feetLabel.setText("Feet:");
+
+        inchesLabel.setText("Inches:");
+
+        orLabel.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        orLabel.setText("Or");
+
+        centimetersLabel.setText("Centimeters:");
+
+        centimetersText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                centimetersTextKeyPressed(evt);
+            }
+        });
+
+        exerciseSpinner.setModel(new javax.swing.SpinnerListModel(new String[] {"No Exercise", "Three Times a Week", "Four Times a Week ", "Five Times a Week ", "Daily ", "Daily (Intense)"}));
+
+        UsernameLabel.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        UsernameLabel.setText("Username:");
+
+        jLabel1.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel1.setText("Exercise:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -134,52 +162,53 @@ public class NewUser extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(finishButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel7)
+                                    .addComponent(ageLabel)
+                                    .addComponent(UsernameLabel)
+                                    .addComponent(genderLabel)
+                                    .addComponent(heightLabel)
+                                    .addComponent(feetLabel)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel9)
-                                        .addComponent(jLabel4)))
+                                        .addComponent(orLabel)
+                                        .addComponent(weightLabel)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ageText, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(feetText, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel8)
+                                        .addComponent(inchesLabel)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(inchesText, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(usernameText, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jRadioButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jTextField2))
+                                            .addComponent(femaleRadioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(weightText))
                                         .addGap(18, 18, 18)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jRadioButton2)
+                                            .addComponent(maleRadioButton)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jRadioButton3)
+                                                .addComponent(poundsRadioButton)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jRadioButton4))))
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addComponent(kilosRadioButton))))
+                                    .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(19, 19, 19)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel10))
+                                .addGap(26, 26, 26)
+                                .addComponent(centimetersLabel)
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(centimetersText, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(13, 13, 13)
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(exerciseSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 98, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -187,69 +216,110 @@ public class NewUser extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(UsernameLabel)
+                    .addComponent(usernameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ageLabel)
+                    .addComponent(ageText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(3, 3, 3)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
+                    .addComponent(genderLabel)
+                    .addComponent(femaleRadioButton)
+                    .addComponent(maleRadioButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4))
+                    .addComponent(weightLabel)
+                    .addComponent(weightText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(poundsRadioButton)
+                    .addComponent(kilosRadioButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
+                .addComponent(heightLabel)
                 .addGap(2, 2, 2)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(feetText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(feetLabel)
+                    .addComponent(inchesLabel)
+                    .addComponent(inchesText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(8, 8, 8)
-                .addComponent(jLabel9)
+                .addComponent(orLabel)
                 .addGap(0, 0, 0)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(centimetersLabel)
+                    .addComponent(centimetersText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
+                    .addComponent(exerciseSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
+                    .addComponent(finishButton)
+                    .addComponent(backButton))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>                        
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        // TODO add your handling code here:
-    }                                           
+    private void femaleRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        maleRadioButton.setSelected(false);
+    }                                                 
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        // TODO add your handling code here:
-    }                                             
+    private void maleRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
+        femaleRadioButton.setSelected(false);
+    }                                               
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        // TODO add your handling code here:
-    }                                           
+    private void finishButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        String[] userInformation = new String[10];
+        userInformation[0] = usernameText.getText();
+        userInformation[1] = ageText.getText();
+        if (femaleRadioButton.isSelected())
+            userInformation[2] = "female";
+        else 
+            userInformation[2] = "male";
+        userInformation[3] = weightText.getText();
+        if (poundsRadioButton.isSelected())
+            userInformation[4] = "pounds";
+        else 
+            userInformation[4] = "kilos";
+        if (centimetersText.getText().isEmpty()){
+            userInformation[5] = feetText.getText().concat(",").concat(inchesText.getText());
+        }
+        else 
+            userInformation[5] = centimetersText.getText();
+        userInformation[6] = exerciseSpinner.getValue().toString();
+        this.setVisible(false);
+        UserProfile userPro = new UserProfile(userInformation);
+        userPro.setVisible(true);
+    }                                            
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // TODO add your handling code here:
-    }                                           
+    }                                          
+
+    private void poundsRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        kilosRadioButton.setSelected(false);
+    }                                                 
+
+    private void kilosRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+        poundsRadioButton.setSelected(false);
+    }                                                
+
+    private void centimetersTextKeyPressed(java.awt.event.KeyEvent evt) {                                           
+        feetText.setText(null);
+        inchesText.setText(null);
+    }                                          
+
+    private void feetTextKeyPressed(java.awt.event.KeyEvent evt) {                                    
+        centimetersText.setText(null);
+    }                                   
+
+    private void inchesTextKeyPressed(java.awt.event.KeyEvent evt) {                                      
+        centimetersText.setText(null);
+    }                                     
 
     /**
      * @param args the command line arguments
@@ -286,30 +356,31 @@ public class NewUser extends javax.swing.JFrame {
         });
     }
 
+  
     // Variables declaration - do not modify                     
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel UsernameLabel;
+    private javax.swing.JLabel ageLabel;
+    private javax.swing.JTextField ageText;
+    private javax.swing.JButton backButton;
+    private javax.swing.JLabel centimetersLabel;
+    private javax.swing.JTextField centimetersText;
+    private javax.swing.JSpinner exerciseSpinner;
+    private javax.swing.JLabel feetLabel;
+    private javax.swing.JTextField feetText;
+    private javax.swing.JRadioButton femaleRadioButton;
+    private javax.swing.JButton finishButton;
+    private javax.swing.JLabel genderLabel;
+    private javax.swing.JLabel heightLabel;
+    private javax.swing.JLabel inchesLabel;
+    private javax.swing.JTextField inchesText;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JRadioButton kilosRadioButton;
+    private javax.swing.JRadioButton maleRadioButton;
+    private javax.swing.JLabel orLabel;
+    private javax.swing.JRadioButton poundsRadioButton;
+    private javax.swing.JLabel titleLabel;
+    private javax.swing.JTextField usernameText;
+    private javax.swing.JLabel weightLabel;
+    private javax.swing.JTextField weightText;
     // End of variables declaration                   
 }
