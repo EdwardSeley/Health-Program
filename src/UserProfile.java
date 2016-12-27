@@ -59,10 +59,15 @@ public class UserProfile extends javax.swing.JFrame {
         greetingTitle.setText("Welcome " + username + "!");
 
         calorieTitle.setFont(new java.awt.Font("L M Roman10", 0, 18)); // NOI18N
-        calorieTitle.setText("Basal Metabolic Rate");
+        calorieTitle.setText("Losing Weight");
 
         calorieList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { String.valueOf(BMR) };
+            String[] strings = {"You need " + String.valueOf(BMR) + " Calories/day to maintain your weight", 
+            		"You need " + String.valueOf(BMR - 500) + " Calories/day to lose 1 lb per week",
+            		"You need " + String.valueOf(BMR - 1000) + " Calories/day to lose 2 lb per week",
+            		"You need " + String.valueOf(BMR + 500) + " Calories/day to gain 1 lb per week",
+            		"You need " + String.valueOf(BMR + 1000) + " Calories/day to lose 1 lb per week",
+            };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
