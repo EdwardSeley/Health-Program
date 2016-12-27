@@ -1,13 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author edward237
- */
 public class UserProfile extends javax.swing.JFrame {
 
     /**
@@ -23,18 +13,25 @@ public class UserProfile extends javax.swing.JFrame {
             weight = Integer.parseInt(userInfo[3]);
         if (userInfo[5].contains(","))
         	height = Integer.parseInt(userInfo[5].substring(0, 1)) * 30.48 + Integer.parseInt(userInfo[5].substring(2, userInfo[5].length())) * 2.54;
-        CalorieCalculator(userInfo[2]);
+        CalorieCalculator(userInfo[2], userInfo[6]);
         initComponents();
     }
     
-    private void CalorieCalculator(String gender){  
-    	
-    	System.out.println(gender);
-    
-        if (gender.equals("male"))
+    private void CalorieCalculator(String gender, String exerciseLevel){  
+   
+         if (gender.equals("male")){
             BMR = (int) ( (10 * weight) + (6.25 * height) - (5 * age) + 5);
-        else 
+            if (Integer.parseInt(exerciseLevel) == 1)
+                calorieLevel = BMR + 361;
+            else
+                calorieLevel = BMR + 361 + (82 * Integer.parseInt(exerciseLevel));
+            System.out.println(calorieLevel);
+         }
+        else {
             BMR = (int) ( (10 * weight) + (6.25 * height) - (5 * age) - 161);
+            calorieLevel = BMR + (361 * Integer.parseInt(exerciseLevel));
+         }
+            
     }
 
     /**
@@ -51,27 +48,39 @@ public class UserProfile extends javax.swing.JFrame {
         calorieTitle = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         calorieList = new javax.swing.JList<>();
+        BMRTitle = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         greetingTitle.setFont(new java.awt.Font("L M Roman10", 0, 24)); // NOI18N
         greetingTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        greetingTitle.setText("Welcome " + username + "!");
+        greetingTitle.setText("Welcome");
+        greetingTitle.setText("Welcome " + username );
 
-        calorieTitle.setFont(new java.awt.Font("L M Roman10", 0, 18)); // NOI18N
-        calorieTitle.setText("Losing Weight");
+        calorieTitle.setFont(new java.awt.Font("L M Roman10", 0, 24)); // NOI18N
+        calorieTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        calorieTitle.setText("Daily Calories");
 
         calorieList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = {"You need " + String.valueOf(BMR) + " Calories/day to maintain your weight", 
-            		"You need " + String.valueOf(BMR - 500) + " Calories/day to lose 1 lb per week",
-            		"You need " + String.valueOf(BMR - 1000) + " Calories/day to lose 2 lb per week",
-            		"You need " + String.valueOf(BMR + 500) + " Calories/day to gain 1 lb per week",
-            		"You need " + String.valueOf(BMR + 1000) + " Calories/day to lose 1 lb per week",
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        calorieList.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = {"You need " + String.valueOf(calorieLevel) + " Calories/day to maintain your weight",
+                "You need " + String.valueOf(calorieLevel - 500) + " Calories/day to lose 1 lb per week",
+                "You need " + String.valueOf(calorieLevel - 1000) + " Calories/day to lose 2 lb per week",
+                "You need " + String.valueOf(calorieLevel + 500) + " Calories/day to gain 1 lb per week",
+                "You need " + String.valueOf(calorieLevel + 1000) + " Calories/day to lose 1 lb per week",
             };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
         jScrollPane1.setViewportView(calorieList);
+
+        BMRTitle.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        BMRTitle.setText("Basal Metabolic Rate");
+        BMRTitle.setText("Basal Metabolic Rate: " + BMR);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -80,15 +89,16 @@ public class UserProfile extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(calorieTitle)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BMRTitle)))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(220, 220, 220)
                         .addComponent(greetingTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(calorieTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1))))
+                        .addComponent(jLabel1)))
                 .addContainerGap(261, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -101,8 +111,10 @@ public class UserProfile extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addComponent(calorieTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(190, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(BMRTitle)
+                .addContainerGap(175, Short.MAX_VALUE))
         );
 
         pack();
@@ -139,14 +151,17 @@ public class UserProfile extends javax.swing.JFrame {
     }
     
     private static int age;
+    private static int exerciseLevel;
     private static double weight;
     private static double height;
     private static String username;
     private static final double KILOGRAM = 2.2046226218;
     private static int BMR;
+    private static int calorieLevel;
     
 
     // Variables declaration - do not modify                     
+    private javax.swing.JLabel BMRTitle;
     private javax.swing.JList<String> calorieList;
     private javax.swing.JLabel calorieTitle;
     private javax.swing.JLabel greetingTitle;

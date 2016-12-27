@@ -1,3 +1,9 @@
+
+import java.util.Arrays;
+
+
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -146,7 +152,8 @@ public class NewUser extends javax.swing.JFrame {
             }
         });
 
-        exerciseSpinner.setModel(new javax.swing.SpinnerListModel(new String[] {"No Exercise", "Three Times a Week", "Four Times a Week ", "Five Times a Week ", "Daily ", "Daily (Intense)"}));
+        exerciseSpinner.setModel(new javax.swing.SpinnerListModel(new String[] {"Basal Metabolic Rate", "Little/No Exercise", "Three Times a Week", "Four Times a Week ", "Five Times a Week ", "Daily ", "Daily (Intense)"}));
+        exerciseSpinner.setModel(new javax.swing.SpinnerListModel(exerciseLevels));
 
         UsernameLabel.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
         UsernameLabel.setText("Username:");
@@ -290,7 +297,7 @@ public class NewUser extends javax.swing.JFrame {
         }
         else 
             userInformation[5] = centimetersText.getText();
-        userInformation[6] = exerciseSpinner.getValue().toString();
+        userInformation[6] = String.valueOf(Arrays.asList(exerciseLevels).indexOf(exerciseSpinner.getValue()));
         this.setVisible(false);
         UserProfile userPro = new UserProfile(userInformation);
         userPro.setVisible(true);
@@ -356,7 +363,7 @@ public class NewUser extends javax.swing.JFrame {
         });
     }
 
-  
+    private static String[] exerciseLevels = {"Basal Metabolic Rate", "Little/No Exercise", "Three Times a Week", "Four Times a Week ", "Five Times a Week ", "Daily ", "Daily (Intense)"};
     // Variables declaration - do not modify                     
     private javax.swing.JLabel UsernameLabel;
     private javax.swing.JLabel ageLabel;
