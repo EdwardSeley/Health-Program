@@ -1,3 +1,16 @@
+
+import java.text.DecimalFormat;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author edward237
+ */
 public class UserProfile extends javax.swing.JFrame {
 
     /**
@@ -13,25 +26,29 @@ public class UserProfile extends javax.swing.JFrame {
             weight = Integer.parseInt(userInfo[3]);
         if (userInfo[5].contains(","))
         	height = Integer.parseInt(userInfo[5].substring(0, 1)) * 30.48 + Integer.parseInt(userInfo[5].substring(2, userInfo[5].length())) * 2.54;
-        CalorieCalculator(userInfo[2], userInfo[6]);
+        HealthCalculator(userInfo[2], userInfo[6]);
         initComponents();
     }
     
-    private void CalorieCalculator(String gender, String exerciseLevel){  
+    private void HealthCalculator(String gender, String exerciseLevel){  
    
          if (gender.equals("male")){
             BMR = (int) ( (10 * weight) + (6.25 * height) - (5 * age) + 5);
-            if (Integer.parseInt(exerciseLevel) == 1)
+            if (Integer.parseInt(exerciseLevel) == 1){
                 calorieLevel = BMR + 361;
-            else
+                idealWeight = 2.20462 * (50 + 2.3 * ( (height * 0.393701) - 60) );}
+            else{
                 calorieLevel = BMR + 361 + (82 * Integer.parseInt(exerciseLevel));
-            System.out.println(calorieLevel);
+                idealWeight = 2.20462 * (45.5 + 2.3 * ( (height * 0.393701) - 60) );}
+            
          }
         else {
             BMR = (int) ( (10 * weight) + (6.25 * height) - (5 * age) - 161);
             calorieLevel = BMR + (361 * Integer.parseInt(exerciseLevel));
          }
             
+         BMI = (int) ( weight/(height * height) * 10000 );
+         
     }
 
     /**
@@ -49,6 +66,11 @@ public class UserProfile extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         calorieList = new javax.swing.JList<>();
         BMRTitle = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        foodDiaryText = new javax.swing.JTextArea();
+        foodDiaryTitle = new javax.swing.JLabel();
+        BMITitle = new javax.swing.JLabel();
+        idealWeightTitle = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,7 +93,7 @@ public class UserProfile extends javax.swing.JFrame {
                 "You need " + String.valueOf(calorieLevel - 500) + " Calories/day to lose 1 lb per week",
                 "You need " + String.valueOf(calorieLevel - 1000) + " Calories/day to lose 2 lb per week",
                 "You need " + String.valueOf(calorieLevel + 500) + " Calories/day to gain 1 lb per week",
-                "You need " + String.valueOf(calorieLevel + 1000) + " Calories/day to lose 1 lb per week",
+                "You need " + String.valueOf(calorieLevel + 1000) + " Calories/day to gain 2 lb per week",
             };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
@@ -79,42 +101,77 @@ public class UserProfile extends javax.swing.JFrame {
         jScrollPane1.setViewportView(calorieList);
 
         BMRTitle.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
-        BMRTitle.setText("Basal Metabolic Rate");
+        BMRTitle.setText("Basal Metabolic Rate: ####");
         BMRTitle.setText("Basal Metabolic Rate: " + BMR);
+
+        foodDiaryText.setColumns(20);
+        foodDiaryText.setRows(5);
+        jScrollPane2.setViewportView(foodDiaryText);
+
+        foodDiaryTitle.setFont(new java.awt.Font("L M Roman10", 0, 24)); // NOI18N
+        foodDiaryTitle.setText("Food Diary");
+
+        BMITitle.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        BMITitle.setText("BMI: ## ");
+        BMITitle.setText("Your BMI: " + BMI);
+
+        idealWeightTitle.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        idealWeightTitle.setText("Ideal Body Weight: ###.##");
+        idealWeightTitle.setText("Ideal Body Weight: " + new DecimalFormat("###.##").format(idealWeight));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(calorieTitle)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(foodDiaryTitle)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(calorieTitle)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BMRTitle)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(220, 220, 220)
                         .addComponent(greetingTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1)))
-                .addContainerGap(261, Short.MAX_VALUE))
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(BMITitle)
+                        .addGap(35, 35, 35)
+                        .addComponent(idealWeightTitle))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(BMRTitle)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(greetingTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addGap(27, 27, 27)
-                .addComponent(calorieTitle)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(calorieTitle)
+                    .addComponent(foodDiaryTitle))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane1))
+                .addGap(32, 32, 32)
                 .addComponent(BMRTitle)
-                .addContainerGap(175, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BMITitle)
+                    .addComponent(idealWeightTitle))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -158,14 +215,21 @@ public class UserProfile extends javax.swing.JFrame {
     private static final double KILOGRAM = 2.2046226218;
     private static int BMR;
     private static int calorieLevel;
+    private static int BMI;
+    private static double idealWeight;
     
 
     // Variables declaration - do not modify                     
+    private javax.swing.JLabel BMITitle;
     private javax.swing.JLabel BMRTitle;
     private javax.swing.JList<String> calorieList;
     private javax.swing.JLabel calorieTitle;
+    private javax.swing.JTextArea foodDiaryText;
+    private javax.swing.JLabel foodDiaryTitle;
     private javax.swing.JLabel greetingTitle;
+    private javax.swing.JLabel idealWeightTitle;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration                   
 }
