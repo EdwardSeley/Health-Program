@@ -1,5 +1,12 @@
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 
@@ -298,6 +305,15 @@ public class NewUser extends javax.swing.JFrame {
         else 
             userInformation[5] = centimetersText.getText();
         userInformation[6] = String.valueOf(Arrays.asList(exerciseLevels).indexOf(exerciseSpinner.getValue()));
+        
+        try {
+            saveInformation(userInformation);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(NewUser.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(NewUser.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         this.setVisible(false);
         UserProfile userPro = new UserProfile(userInformation);
         userPro.setVisible(true);
@@ -328,9 +344,14 @@ public class NewUser extends javax.swing.JFrame {
         centimetersText.setText(null);
     }                                     
 
-    /**
-     * @param args the command line arguments
-     */
+    private void saveInformation(String[] userInformation) throws FileNotFoundException, IOException{
+    File file = new File(System.getProperty("user.dir") + "/UserInfo.txt");
+    BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
+    writer.append("---------------------" + System.getProperty("line.separator"));
+    for (int x = 0; x < 7; x++)
+        writer.append(userInformation[x] + System.getProperty("line.separator"));
+    writer.close();
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

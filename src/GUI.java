@@ -1,5 +1,13 @@
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /*
- /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -56,6 +64,11 @@ public class GUI extends javax.swing.JFrame {
         });
 
         loginButton.setText("Login");
+        loginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginButtonActionPerformed(evt);
+            }
+        });
 
         signatureLabel.setFont(new java.awt.Font("Caladea", 0, 15)); // NOI18N
         signatureLabel.setText("Created by Edward Seley");
@@ -111,6 +124,39 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }                                            
 
+    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        File file = new File(System.getProperty("user.dir") + "/UserInfo.txt");
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            while ((reader.readLine() != null))
+            {
+                String textLine = reader.readLine();
+                if (textLine.equals(usernameText.getText()))
+                {
+                    userInfo[0] = textLine;
+                    for (int x = 1; x < 7; x++)
+                    {
+                        textLine = reader.readLine();
+                        userInfo[x] = textLine;
+                    }
+                    
+                break;
+                
+                }
+                
+            }
+            
+            this.setVisible(false);
+            UserProfile userPro = new UserProfile(userInfo);
+            userPro.setVisible(true);
+                
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }                                           
+
     /**
      * @param args the command line arguments
      */
@@ -146,6 +192,7 @@ public class GUI extends javax.swing.JFrame {
         });
     }
 
+    private static String[] userInfo = new String[7];
     // Variables declaration - do not modify                     
     private javax.swing.JButton loginButton;
     private javax.swing.JButton newUserButton;
