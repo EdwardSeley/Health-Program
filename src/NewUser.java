@@ -384,7 +384,7 @@ public class NewUser extends javax.swing.JFrame {
         });
     }
 
-    private static String[] exerciseLevels = {"Basal Metabolic Rate", "Little/No Exercise", "Three Times a Week", "Four Times a Week ", "Five Times a Week ", "Daily ", "Daily (Intense)"};
+    private final static String[] exerciseLevels = {"Basal Metabolic Rate", "Little/No Exercise", "Three Times a Week", "Four Times a Week ", "Five Times a Week ", "Daily ", "Daily (Intense)"};
     // Variables declaration - do not modify                     
     private javax.swing.JLabel UsernameLabel;
     private javax.swing.JLabel ageLabel;
