@@ -139,8 +139,6 @@ public class GUI extends javax.swing.JFrame {
                         textLine = reader.readLine();
                         userInfo[x] = textLine;
                     }
-                    
-                break;
                 
                 }
                 
