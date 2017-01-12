@@ -23,7 +23,7 @@ public class WarningDialogBox extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         usernameAlreadyExistsTitle.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        usernameAlreadyExistsTitle.setText("Username Already Exists!");
+        usernameAlreadyExistsTitle.setText("Username Already Exists");
 
         okayButton.setText("Okay");
         okayButton.addActionListener(new java.awt.event.ActionListener() {
