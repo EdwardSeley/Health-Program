@@ -264,7 +264,11 @@ public class NewUser extends javax.swing.JFrame {
     }                                               
 
     private void finishButtonActionPerformed(java.awt.event.ActionEvent evt) {  //pulls data from input fields and saves them in an array                                           
+<<<<<<< HEAD
     	String[] userInformation = new String[10];
+=======
+        String[] userInformation = new String[10];
+>>>>>>> refs/remotes/origin/master
         userInformation[0] = usernameText.getText();
     
         boolean usernameExists = GUI.checkUsername(userInformation[0]);
