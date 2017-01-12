@@ -224,8 +224,9 @@ public class UserProfile extends javax.swing.JFrame {
                     .addComponent(backButton))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
+        
         pack();
+        this.setResizable(false);
     }                        
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           

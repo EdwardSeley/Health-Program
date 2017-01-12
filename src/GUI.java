@@ -87,6 +87,7 @@ public class GUI extends javax.swing.JFrame {
         );
 
         pack();
+        this.setResizable(false);
     }                     
 
     private void newUserButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
