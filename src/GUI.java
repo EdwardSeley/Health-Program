@@ -13,11 +13,7 @@ public class GUI extends javax.swing.JFrame {
         initComponents();
     }
                          
-<<<<<<< HEAD
     private void initComponents() { 
-=======
-    private void initComponents() {
->>>>>>> refs/remotes/origin/master
 
         titleLabel = new javax.swing.JLabel();
         newUserButton = new javax.swing.JButton();
@@ -99,52 +95,11 @@ public class GUI extends javax.swing.JFrame {
         userprofile.setVisible(true);
     }                                                                                       
 
-<<<<<<< HEAD
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) 
     {                                            
         boolean usernameExists = checkUsername(usernameText.getText());
         
             if (usernameExists)
-=======
-    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        File file = new File(System.getProperty("user.dir") + "/UserInfo.txt");
-        boolean correctUsername = false;
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            while ((reader.readLine() != null))
->>>>>>> refs/remotes/origin/master
-            {
-<<<<<<< HEAD
-            	this.setVisible(false);
-            	UserProfile userPro = new UserProfile(userInfo);
-            	userPro.setVisible(true);
-            } 
-            
-            else 
-            {
-=======
-                String textLine = reader.readLine();
-                if (textLine.equals(usernameText.getText())) //finds username in UserInfo and reads the information, then stores in array
-                {	
-                    userInfo[0] = textLine;
-                    correctUsername = true;
-                    for (int x = 1; x < 7; x++)
-                    {
-                        textLine = reader.readLine();
-                        userInfo[x] = textLine;
-                    }
->>>>>>> refs/remotes/origin/master
-                
-             WarningFrame warning = new WarningFrame();
-             this.setVisible(false);
-             warning.setVisible(true);
-                
-            }
-            
-<<<<<<< HEAD
-=======
-            reader.close();
-            if (correctUsername)
             {
             	this.setVisible(false);
             	UserProfile userPro = new UserProfile(userInfo);
@@ -159,12 +114,7 @@ public class GUI extends javax.swing.JFrame {
              warning.setVisible(true);
                 
             }
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
-        }
->>>>>>> refs/remotes/origin/master
+            
     }                                           
 
     /**
@@ -195,7 +145,6 @@ public class GUI extends javax.swing.JFrame {
             }
         });
     }
-<<<<<<< HEAD
     
     public static boolean checkUsername(String username){
     	File file = new File(System.getProperty("user.dir") + "/UserInfo.txt");
@@ -230,18 +179,11 @@ public class GUI extends javax.swing.JFrame {
         return correctUsername;
     }
     
-=======
-
->>>>>>> refs/remotes/origin/master
     private static String[] userInfo = new String[7];                  
     private javax.swing.JButton loginButton;
     private javax.swing.JButton newUserButton;
     private javax.swing.JLabel signatureLabel;
     private javax.swing.JLabel titleLabel;
-<<<<<<< HEAD
     private static javax.swing.JTextField usernameText;
-=======
-    private javax.swing.JTextField usernameText;
->>>>>>> refs/remotes/origin/master
     
 }
