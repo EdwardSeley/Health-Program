@@ -32,34 +32,22 @@ public class UserProfile extends javax.swing.JFrame {
         initComponents();
     }
     
-    private void HealthCalculator(String gender, String exerciseLevel){  
+    private void HealthCalculator(String gender, String exerciseLevel)
+    {  
    
-         if (gender.equals("male")){
-            BMR = (int) ( (10 * weight) + (6.25 * height) - (5 * age) + 5); 
-            idealWeight = 2.20462 * (50 + 2.3 * ( (height * 0.393701) - 60) );
-            if (Integer.parseInt(exerciseLevel) == 1){
-                calorieLevel = BMR + 361;
-                }
-            else{
-                calorieLevel = BMR + 361 + (82 * Integer.parseInt(exerciseLevel));
-                }
-            
+         if (gender.equals("male"))
+         {
+            BMR = (int) ( (10 * weight) + (6.25 * height) - (5 * age) + 5); //Harris-Bennedict Formula for BMR
+            idealWeight = 2.20462 * (50 + 2.3 * ( (height * 0.393701) - 60) ); //HAMWI formula
          }
          
-         else {
-             
-            BMR = (int) ( (10 * weight) + (6.25 * height) - (5 * age) - 161);
-            idealWeight = 2.20462 * (45.5 + 2.3 * ( (height * 0.393701) - 60) );
-            
-            if (Integer.parseInt(exerciseLevel) == 1)
-                calorieLevel = BMR + 361;
-            
-            else
-                calorieLevel = BMR + 361 + (82 * Integer.parseInt(exerciseLevel));
-             }
-            
-            BMI = (int) ( weight/(height * height) * 10000 );
-         
+         else 
+         {
+            BMR = (int) ( (10 * weight) + (6.25 * height) - (5 * age) - 161); //Harris-Bennedict Formula for BMR
+            idealWeight = 2.20462 * (45.5 + 2.3 * ( (height * 0.393701) - 60) ); //HAMWI formula
+         }  
+         	calorieLevel = (int) (BMR * (1.2 + (0.175 * Integer.parseInt(exerciseLevel)))); //Harris - Bennedict Formula for calorie levels
+            BMI = (int) ( weight/(height * height) * 10000 ); //Uses CDC formula
     }
 
                           
@@ -254,10 +242,7 @@ public class UserProfile extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(UserProfile.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
 
-    
     }                                          
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
